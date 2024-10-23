@@ -22,6 +22,7 @@ def encode(password):
             encoded_password += (str((int(num) + 3) % 10))
     return encoded_password
 
+
 def decode(encoded_password):
     # EX INPUT = 45678888
     # EX OUT = 12345555
@@ -30,10 +31,9 @@ def decode(encoded_password):
         # handles num [0, 3]
         if int(num) < 3:
             decoded_password += str(int(num) + 7) 
-        else: # handles num [4, 9]
+        else:  # handles num [4, 9]
             decoded_password += str(int(num) - 3)
     return decoded_password
-
 
 
 def main():
@@ -42,12 +42,12 @@ def main():
     while True:
         looping_menu()
         option = int(input('Please enter an option: '))        
-        # Needs to calls encode function 
+        # Needs to call encode function
         if option == 1:
             password = input('Please enter your password to encode: ')
             print('Your password has been encoded and stored!\n')
             stored_pass = ''  # Clears stored pass in case user wants to encode a different password
-            stored_pass += password
+            stored_pass += encode(password)
         elif option == 2:
             print(f'The encoded password is: {stored_pass}, and the original password is {decode(stored_pass)}.')
         elif option == 3:
