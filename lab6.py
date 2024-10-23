@@ -26,6 +26,7 @@ def main():
         looping_menu()
         option = int(input('Please enter an option: '))
         stored_pass = ''
+
         if option == 1:
             password = input('Please enter your password to encode: ')
             print('Your password has been encoded and stored!')
