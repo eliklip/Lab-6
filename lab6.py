@@ -3,8 +3,8 @@
 
 
 def looping_menu():
-    print('Options Menu')
-    print('------------')
+    print('Menu')
+    print('-------------')
     print('1. Encode password')
     print('2. Decode password')
     print('3. Exit program\n')
@@ -12,8 +12,8 @@ def looping_menu():
 
 def user_selection(option):
     if option == 1:
-        password = input('Please input your password for encryption: ')
-        print('Your password has been encoded.')
+        password = input('Please enter your password to encode: ')
+        print('Your password has been encoded and stored!')
         return encode(password)
     elif option == 2:
         pass
@@ -36,7 +36,7 @@ def encode(password):
 def main():
     while True:
         looping_menu()
-        option = int(input('Please select an option: '))
+        option = int(input('Please enter an option: '))
         user_selection(option)
         print()
 
