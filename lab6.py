@@ -10,18 +10,6 @@ def looping_menu():
     print('3. Exit program\n')
 
 
-def user_selection(option):
-    if option == 1:
-        password = input('Please enter your password to encode: ')
-        print('Your password has been encoded and stored!')
-        return encode(password)
-    elif option == 2:
-        pass
-    # FIXME!! PLEASE CREATE A DECODE FUNCTION
-    elif option == 3:
-        exit()
-
-
 def encode(password):
     encoded_password = ''
 
@@ -37,7 +25,16 @@ def main():
     while True:
         looping_menu()
         option = int(input('Please enter an option: '))
-        user_selection(option)
+        stored_pass = ''
+        if option == 1:
+            password = input('Please enter your password to encode: ')
+            print('Your password has been encoded and stored!')
+            stored_pass += password
+        elif option == 2:
+            pass
+            # FIXME!! PLEASE CREATE A DECODE FUNCTION
+        elif option == 3:
+            exit()
         print()
 
 
