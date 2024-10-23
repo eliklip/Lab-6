@@ -22,22 +22,39 @@ def encode(password):
             encoded_password += (str((int(num) + 3) % 10))
     return encoded_password
 
+def decode(encoded_password):
+    # EX INPUT = 45678888
+    # EX OUT = 12345555
+    decoded_password = ''
+    for num in encoded_password:
+        # handles num [0, 3]
+        if int(num) < 3:
+            decoded_password += str(int(num) + 7) 
+        else: # handles num [4, 9]
+            decoded_password += str(int(num) - 3)
+    return decoded_password
 
-# FIXME!!! NEEDS A DECODE() FUNCTION HERE
+
+
 def main():
     while True:
         looping_menu()
         option = int(input('Please enter an option: '))
-        stored_pass = ''  # Out of if-elif branches, so it can be used for decode function
-
+        stored_pass = ''  # !!! Out of if-elif branches, so it can be used for decode function
+        
+        
+        # Needs to calls encode function 
         if option == 1:
             password = input('Please enter your password to encode: ')
             print('Your password has been encoded and stored!\n')
             stored_pass = ''  # Clears stored pass in case user wants to encode a different password
             stored_pass += password
+
+        # Can't print encoded password because once the user encode their password
+        # gets reset at the beginning of the loop. 
+        # maybe put {stored_pass = ''} out of the while loop.
         elif option == 2:
-            pass
-            # FIXME!! PLEASE REFER TO DECODE FUNCTION
+            print(f'The encoded password is: {stored_pass}, and the original password is {decode(stored_pass)}')
         elif option == 3:
             exit()
 
