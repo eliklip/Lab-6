@@ -49,7 +49,7 @@ def main():
             stored_pass = ''  # Clears stored pass in case user wants to encode a different password
             stored_pass += encode(password)
         elif option == 2:
-            print(f'The encoded password is: {stored_pass}, and the original password is {decode(stored_pass)}.')
+            print(f'The encoded password is: {stored_pass}, and the original password is {decode(stored_pass)}.\n')
         elif option == 3:
             exit()
 
