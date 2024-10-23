@@ -32,7 +32,7 @@ def main():
 
         if option == 1:
             password = input('Please enter your password to encode: ')
-            print('Your password has been encoded and stored!')
+            print('Your password has been encoded and stored!\n')
             stored_pass = ''  # Clears stored pass in case user wants to encode a different password
             stored_pass += password
         elif option == 2:
@@ -40,7 +40,6 @@ def main():
             # FIXME!! PLEASE REFER TO DECODE FUNCTION
         elif option == 3:
             exit()
-        print()
 
 
 if __name__ == '__main__':
